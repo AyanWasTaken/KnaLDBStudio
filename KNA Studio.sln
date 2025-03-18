@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNA Studio", "KNA Studio.csproj", "{62541D07-A65F-4A26-AB72-1F2FA116E3A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62541D07-A65F-4A26-AB72-1F2FA116E3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62541D07-A65F-4A26-AB72-1F2FA116E3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62541D07-A65F-4A26-AB72-1F2FA116E3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62541D07-A65F-4A26-AB72-1F2FA116E3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D30CC34-A535-4A24-A1C3-7FC38FBE48CC}
+	EndGlobalSection
+EndGlobal
