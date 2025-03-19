@@ -46,42 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder.cs">
+    <Compile Include="Main\Builder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Builder.Designer.cs">
+    <Compile Include="Main\Builder.Designer.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewProject.cs">
+    <Compile Include="Basic\CreateNewProject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewProject.Designer.cs">
+    <Compile Include="Basic\CreateNewProject.Designer.cs">
       <DependentUpon>CreateNewProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="Basic\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
+    <Compile Include="Basic\HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="OldCreationPage.cs">
+    <Compile Include="Other\OldCreationPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OldCreationPage.Designer.cs">
+    <Compile Include="Other\OldCreationPage.Designer.cs">
       <DependentUpon>OldCreationPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Builder.resx">
+    <EmbeddedResource Include="Main\Builder.resx">
       <DependentUpon>Builder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNewProject.resx">
+    <EmbeddedResource Include="Basic\CreateNewProject.resx">
       <DependentUpon>CreateNewProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
+    <EmbeddedResource Include="Basic\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OldCreationPage.resx">
+    <EmbeddedResource Include="Other\OldCreationPage.resx">
       <DependentUpon>OldCreationPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -107,14 +107,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NewFile1.txt" />
-    <Content Include="NewFile2.txt" />
+    <Content Include="Other\NewFile1.txt" />
+    <Content Include="Other\NewFile2.txt" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Test.ts" />
+    <TypeScriptCompile Include="Basic\random.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

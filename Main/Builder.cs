@@ -20,7 +20,7 @@ namespace KNA_Studio
             try
             {
                 listBox1.Items.Clear();
-                DirectoryInfo dinfo = new DirectoryInfo(Environment.CurrentDirectory + @"\" + SelectedDB);
+                DirectoryInfo dinfo = new DirectoryInfo(Environment.CurrentDirectory + @"\" + SelectedDB + @"\");
                 FileInfo[] smFiles = dinfo.GetFiles("*.txt, *.kna, *.mp4, *.mp3, *.png, *.jpg, *.jpeg, *.exe, *.scr, *.wav, *.m4a, *.log");
                 foreach (FileInfo fi in smFiles)
                 {
@@ -84,6 +84,18 @@ namespace KNA_Studio
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Please check the GitHub wiki for supported file types, as any other will NOT show up in the studio.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updateValueDB.Text = textBox1.Text;
+            MessageBox.Show("Copied", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            updateValueDB.Text = textBox1.Text;
+            MessageBox.Show("Copied", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -117,11 +117,11 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 30.25F);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(51, 27);
+            this.label13.Location = new System.Drawing.Point(40, 15);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 52);
+            this.label13.Size = new System.Drawing.Size(52, 52);
             this.label13.TabIndex = 10;
-            this.label13.Text = "*";
+            this.label13.Text = "+";
             // 
             // label14
             // 
@@ -130,9 +130,9 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(130, 47);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(184, 20);
+            this.label14.Size = new System.Drawing.Size(165, 20);
             this.label14.TabIndex = 9;
-            this.label14.Text = "Open a existing project!";
+            this.label14.Text = "Create a new project!";
             // 
             // label15
             // 
@@ -141,9 +141,9 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(129, 22);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 25);
+            this.label15.Size = new System.Drawing.Size(123, 25);
             this.label15.TabIndex = 8;
-            this.label15.Text = "Edit Existing";
+            this.label15.Text = "New Project";
             // 
             // label5
             // 
