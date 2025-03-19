@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KNA_Studio
 {
-    public partial class Form2: Form
+    public partial class OldCreationPage: Form
     {
-        public Form2()
+        public OldCreationPage()
         {
             InitializeComponent();
         }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace KNA_Studio
 {
-    public partial class Form1: Form
+    public partial class HomePage: Form
     {
         private bool mouseDown;
         private Point lastLocation;
@@ -36,7 +36,7 @@ namespace KNA_Studio
         {
             mouseDown = false;
         }
-        public Form1()
+        public HomePage()
         {
             InitializeComponent();
 
@@ -46,6 +46,13 @@ namespace KNA_Studio
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Builder builder = new Builder();
+            builder.Show();
+            this.Hide();
         }
     }
 }

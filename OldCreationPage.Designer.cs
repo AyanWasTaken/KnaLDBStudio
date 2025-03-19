@@ -1,6 +1,6 @@
 ﻿namespace KNA_Studio
 {
-    partial class Form2
+    partial class OldCreationPage
     {
         /// <summary>
         /// Required designer variable.
