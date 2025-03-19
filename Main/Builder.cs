@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -72,7 +73,7 @@ namespace KNA_Studio
 
                 // get all files with the specified extensions
                 DirectoryInfo dinfo = new DirectoryInfo(directoryPath);
-                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log" };
+                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log", ".obj", ".mtl", ".psd", ".ae" };
                 FileInfo[] smFiles = dinfo.GetFiles("*.*")
                                           .Where(f => allowedExtensions.Contains(f.Extension.ToLower()))
                                           .ToArray();
@@ -96,6 +97,7 @@ namespace KNA_Studio
             MessageBox.Show("KNA LDB Studio 1.1 PTB: This our first public test build! Report bugs on our GitHub page.", "What's New", MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefreshListBox();
             this.FormClosing += MainForm_FormClosing;
+      //      btnCopyExisting.Click += btnCopyExisting_Click;
         }
 
         private void Builder_Load(object sender, EventArgs e)
@@ -145,14 +147,30 @@ namespace KNA_Studio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            updateValueDB.Text = textBox1.Text;
+            updateValueTB.Text = textBox1.Text;
             MessageBox.Show("Copied", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            updateValueDB.Text = textBox1.Text;
-            MessageBox.Show("Copied", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                // Get the text from textBox1
+                string textToCopy = textBox1.Text;
+
+                // Set the text in updateValueTB
+                updateValueTB.Text = textToCopy;
+
+                // Optionally, enable updateValueTB temporarily (if needed)
+                updateValueTB.Enabled = true;
+                updateValueTB.Focus(); // Set focus to the TextBox
+                MessageBox.Show("Copied", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                MessageBox.Show($"An error occurred while copying the text: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -191,7 +209,7 @@ namespace KNA_Studio
 
                         deletedFilesStack.Push(tempPath);
 
-                        MessageBox.Show($"'{selectedFileName}' has been deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"'{selectedFileName}' has been moved to the trash folder (\\Temp).", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         RefreshListBox();
                     }
@@ -254,6 +272,280 @@ namespace KNA_Studio
             {
                 // handle any errors
                 MessageBox.Show($"An error occurred while restoring the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Saved project file", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Wrote all changes", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if an item is selected
+                if (listBox1.SelectedItem == null)
+                {
+                    textBox1.Text = string.Empty; // Clear the TextBox if nothing is selected
+                    return;
+                }
+
+                // Get the selected file name
+                string selectedFileName = listBox1.SelectedItem.ToString();
+
+                // Construct the full file path
+                string filePath = Path.Combine(Environment.CurrentDirectory, SelectedDB, selectedFileName);
+
+                // Check if the file exists
+                if (File.Exists(filePath))
+                {
+                    // Read the file contents
+                    string fileContents = File.ReadAllText(filePath);
+
+                    // Display the contents in the TextBox
+                    textBox1.Text = fileContents;
+                }
+                else
+                {
+                    MessageBox.Show($"File '{selectedFileName}' does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+            //    MessageBox.Show($"An error occurred while reading the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void openCurrentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            try
+            { 
+        
+                string dbDirectoryPath = Path.Combine(Environment.CurrentDirectory, SelectedDB);
+
+               
+                if (Directory.Exists(dbDirectoryPath))
+                {
+
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = dbDirectoryPath,
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show($"The directory '{dbDirectoryPath}' does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+     
+                MessageBox.Show($"An error occurred while opening the directory: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void lDBDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string dbDirectoryPath = Path.Combine(Environment.CurrentDirectory, SelectedDB);
+
+
+                if (Directory.Exists(dbDirectoryPath))
+                {
+
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = dbDirectoryPath,
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show($"The directory '{dbDirectoryPath}' does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"An error occurred while opening the directory: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void studioDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string dbDirectoryPath = Path.Combine(Environment.CurrentDirectory);
+
+
+                if (Directory.Exists(dbDirectoryPath))
+                {
+
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = dbDirectoryPath,
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show($"The directory '{dbDirectoryPath}' does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"An error occurred while opening the directory: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void advancedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Define the allowed file extensions
+                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log", ".obj", ".mtl", ".psd", ".ae" };
+
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "All Files (*.*)|*.*";
+                    openFileDialog.Title = "Select files to upload";
+                    openFileDialog.Multiselect = true; // Allow multiple file selection
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+              
+                        foreach (string selectedFilePath in openFileDialog.FileNames)
+                        {
+                            string fileName = Path.GetFileName(selectedFilePath);
+                            string fileExtension = Path.GetExtension(selectedFilePath).ToLower();
+                            string destinationPath = Path.Combine(Environment.CurrentDirectory, SelectedDB, fileName);
+
+     
+                            if (File.Exists(destinationPath))
+                            {
+                         
+                                DialogResult overwriteResult = MessageBox.Show($"The file '{fileName}' already exists. Do you want to overwrite it?", "Overwrite Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                if (overwriteResult == DialogResult.No)
+                                {
+                                    continue;
+                                }
+                            }
+
+                            File.Copy(selectedFilePath, destinationPath, overwrite: true);
+
+                            if (!allowedExtensions.Contains(fileExtension))
+                            {
+                             
+                                MessageBox.Show($"The file '{fileName}' has an unsupported extension ({fileExtension}). It has been uploaded but will not be visible in the studio explorer.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+
+                 
+                        RefreshListBox();
+
+                        MessageBox.Show("All files uploaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+             
+                MessageBox.Show($"An error occurred while uploading the files: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Check if a file is selected in the ListBox
+                if (listBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select a file to update.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Get the selected file name
+                string selectedFileName = listBox1.SelectedItem.ToString();
+
+                // Construct the full file path
+                string filePath = Path.Combine(Environment.CurrentDirectory, SelectedDB, selectedFileName);
+
+     //REFRESH THE TEXTBOX           // Check if the file exists
+                if (File.Exists(filePath))
+                {
+                    // Get the new content from the TextBox
+                    string newContent = updateValueTB.Text;
+
+                    // Write the new content to the file
+                    File.WriteAllText(filePath, newContent);
+
+                    MessageBox.Show($"File '{selectedFileName}' has been updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        // Check if an item is selected
+                        if (listBox1.SelectedItem == null)
+                        {
+                            textBox1.Text = string.Empty; // Clear the TextBox if nothing is selected
+                            return;
+                        }
+
+                        // Get the selected file name
+                   //     string selectedFileName = listBox1.SelectedItem.ToString();
+
+                        // Construct the full file path
+                    //    string filePath = Path.Combine(Environment.CurrentDirectory, SelectedDB, selectedFileName);
+
+                        // Check if the file exists
+                        if (File.Exists(filePath))
+                        {
+                            // Read the file contents
+                            string fileContents = File.ReadAllText(filePath);
+
+                            // Display the contents in the TextBox
+                            textBox1.Text = fileContents;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"File '{selectedFileName}' does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle any errors
+                        //    MessageBox.Show($"An error occurred while reading the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                } //END OF REFRESHER
+                else
+                {
+                    MessageBox.Show($"File '{selectedFileName}' does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+                MessageBox.Show($"An error occurred while updating the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

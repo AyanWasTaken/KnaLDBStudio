@@ -36,12 +36,6 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.valueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.videoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.executableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.updateValueDB = new System.Windows.Forms.TextBox();
+            this.updateValueTB = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -70,6 +64,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lDBDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studioDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +95,8 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveAsToolStripMenuItem,
             this.saveToolStripMenuItem,
-            this.closeToolStripMenuItem});
+            this.closeToolStripMenuItem,
+            this.openToolStripMenuItem});
             this.toolStripDropDownButton1.ForeColor = System.Drawing.Color.White;
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -109,19 +108,21 @@
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // toolStripSeparator1
@@ -133,57 +134,13 @@
             // 
             this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.valueToolStripMenuItem,
-            this.imageToolStripMenuItem,
-            this.videoToolStripMenuItem,
-            this.advancedToolStripMenuItem});
+            this.customToolStripMenuItem});
             this.toolStripDropDownButton2.ForeColor = System.Drawing.Color.White;
             this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(42, 22);
             this.toolStripDropDownButton2.Text = "Add";
-            // 
-            // valueToolStripMenuItem
-            // 
-            this.valueToolStripMenuItem.Name = "valueToolStripMenuItem";
-            this.valueToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.valueToolStripMenuItem.Text = "Value";
-            // 
-            // imageToolStripMenuItem
-            // 
-            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
-            this.imageToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.imageToolStripMenuItem.Text = "Image";
-            // 
-            // videoToolStripMenuItem
-            // 
-            this.videoToolStripMenuItem.Name = "videoToolStripMenuItem";
-            this.videoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.videoToolStripMenuItem.Text = "Video";
-            // 
-            // advancedToolStripMenuItem
-            // 
-            this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.executableToolStripMenuItem,
-            this.customToolStripMenuItem});
-            this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
-            this.advancedToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.advancedToolStripMenuItem.Text = "Advanced";
-            // 
-            // executableToolStripMenuItem
-            // 
-            this.executableToolStripMenuItem.Name = "executableToolStripMenuItem";
-            this.executableToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.executableToolStripMenuItem.Text = "Executable";
-            this.executableToolStripMenuItem.Click += new System.EventHandler(this.executableToolStripMenuItem_Click);
-            // 
-            // customToolStripMenuItem
-            // 
-            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.customToolStripMenuItem.Text = "Custom";
-            this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -280,6 +237,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(371, 688);
             this.listBox1.TabIndex = 20;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -296,7 +254,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(512, 78);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -315,15 +273,16 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Update Value:";
             // 
-            // updateValueDB
+            // updateValueTB
             // 
-            this.updateValueDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.updateValueDB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.updateValueDB.Location = new System.Drawing.Point(512, 231);
-            this.updateValueDB.Multiline = true;
-            this.updateValueDB.Name = "updateValueDB";
-            this.updateValueDB.Size = new System.Drawing.Size(476, 88);
-            this.updateValueDB.TabIndex = 24;
+            this.updateValueTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.updateValueTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.updateValueTB.ForeColor = System.Drawing.Color.White;
+            this.updateValueTB.Location = new System.Drawing.Point(512, 231);
+            this.updateValueTB.Multiline = true;
+            this.updateValueTB.Name = "updateValueTB";
+            this.updateValueTB.Size = new System.Drawing.Size(476, 88);
+            this.updateValueTB.TabIndex = 24;
             // 
             // label12
             // 
@@ -336,6 +295,7 @@
             this.label12.Size = new System.Drawing.Size(24, 17);
             this.label12.TabIndex = 25;
             this.label12.Text = "💾";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // button2
             // 
@@ -349,6 +309,7 @@
             this.button2.TabIndex = 29;
             this.button2.Text = "Upload Files to DB";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox2
             // 
@@ -435,6 +396,7 @@
             this.button6.TabIndex = 40;
             this.button6.Text = "Copy exisiting";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Visible = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel1
@@ -473,6 +435,35 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lDBDirectoryToolStripMenuItem,
+            this.studioDirectoryToolStripMenuItem});
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
+            // lDBDirectoryToolStripMenuItem
+            // 
+            this.lDBDirectoryToolStripMenuItem.Name = "lDBDirectoryToolStripMenuItem";
+            this.lDBDirectoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lDBDirectoryToolStripMenuItem.Text = "LDB Directory";
+            this.lDBDirectoryToolStripMenuItem.Click += new System.EventHandler(this.lDBDirectoryToolStripMenuItem_Click);
+            // 
+            // studioDirectoryToolStripMenuItem
+            // 
+            this.studioDirectoryToolStripMenuItem.Name = "studioDirectoryToolStripMenuItem";
+            this.studioDirectoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.studioDirectoryToolStripMenuItem.Text = "Studio Directory";
+            this.studioDirectoryToolStripMenuItem.Click += new System.EventHandler(this.studioDirectoryToolStripMenuItem_Click);
+            // 
+            // customToolStripMenuItem
+            // 
+            this.customToolStripMenuItem.Name = "customToolStripMenuItem";
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customToolStripMenuItem.Text = "Custom";
+            // 
             // Builder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,7 +482,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.updateValueDB);
+            this.Controls.Add(this.updateValueTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -518,12 +509,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
-        private System.Windows.Forms.ToolStripMenuItem valueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem videoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem executableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoSaveToolStripMenuItem;
@@ -537,7 +522,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox updateValueDB;
+        private System.Windows.Forms.TextBox updateValueTB;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
@@ -550,5 +535,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lDBDirectoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studioDirectoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
     }
 }
