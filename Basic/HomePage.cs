@@ -54,5 +54,12 @@ namespace KNA_Studio
             builder.Show();
             this.Hide();
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            CreateNewProject createNewProject = new CreateNewProject();
+            createNewProject.ShowDialog();
+            this.Hide();
+        }
     }
 }

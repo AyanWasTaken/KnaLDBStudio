@@ -68,6 +68,9 @@
             this.lDBDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studioDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.folderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,10 +84,12 @@
             this.toolStripSeparator2,
             this.toolStripDropDownButton3,
             this.toolStripSeparator3,
-            this.toolStripDropDownButton4});
+            this.toolStripDropDownButton4,
+            this.toolStripSeparator4,
+            this.toolStripDropDownButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1419, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1027, 25);
             this.toolStrip1.TabIndex = 19;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -235,7 +240,7 @@
             "Test"});
             this.listBox1.Location = new System.Drawing.Point(12, 48);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(371, 688);
+            this.listBox1.Size = new System.Drawing.Size(375, 688);
             this.listBox1.TabIndex = 20;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -303,9 +308,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(502, 448);
+            this.button2.Location = new System.Drawing.Point(502, 404);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(486, 42);
+            this.button2.Size = new System.Drawing.Size(505, 42);
             this.button2.TabIndex = 29;
             this.button2.Text = "Upload Files to DB";
             this.button2.UseVisualStyleBackColor = false;
@@ -350,12 +355,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(389, 49);
+            this.button3.Location = new System.Drawing.Point(402, 53);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(58, 23);
             this.button3.TabIndex = 37;
             this.button3.Text = "+";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -363,7 +369,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(389, 78);
+            this.button4.Location = new System.Drawing.Point(402, 78);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(58, 35);
             this.button4.TabIndex = 38;
@@ -377,9 +383,9 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(502, 496);
+            this.button5.Location = new System.Drawing.Point(502, 452);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(486, 42);
+            this.button5.Size = new System.Drawing.Size(505, 42);
             this.button5.TabIndex = 39;
             this.button5.Text = "DB Management";
             this.button5.UseVisualStyleBackColor = false;
@@ -402,7 +408,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel1.Location = new System.Drawing.Point(466, 49);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(475, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 673);
             this.panel1.TabIndex = 41;
@@ -413,7 +420,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(389, 119);
+            this.button1.Location = new System.Drawing.Point(402, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 47);
             this.button1.TabIndex = 42;
@@ -427,11 +434,11 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(389, 701);
+            this.button7.Location = new System.Drawing.Point(402, 172);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(58, 35);
+            this.button7.Size = new System.Drawing.Size(58, 52);
             this.button7.TabIndex = 43;
-            this.button7.Text = "Undo";
+            this.button7.Text = "Undo Del";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -464,12 +471,36 @@
             this.customToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customToolStripMenuItem.Text = "Custom";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton5
+            // 
+            this.toolStripDropDownButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.folderToolStripMenuItem});
+            this.toolStripDropDownButton5.ForeColor = System.Drawing.Color.White;
+            this.toolStripDropDownButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton5.Image")));
+            this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
+            this.toolStripDropDownButton5.Size = new System.Drawing.Size(59, 22);
+            this.toolStripDropDownButton5.Text = "Plugins";
+            // 
+            // folderToolStripMenuItem
+            // 
+            this.folderToolStripMenuItem.Name = "folderToolStripMenuItem";
+            this.folderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.folderToolStripMenuItem.Text = "Folder";
+            this.folderToolStripMenuItem.Click += new System.EventHandler(this.folderToolStripMenuItem_Click);
+            // 
             // Builder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1419, 760);
+            this.ClientSize = new System.Drawing.Size(1027, 760);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -539,5 +570,8 @@
         private System.Windows.Forms.ToolStripMenuItem lDBDirectoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studioDirectoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
+        private System.Windows.Forms.ToolStripMenuItem folderToolStripMenuItem;
     }
 }

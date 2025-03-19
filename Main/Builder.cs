@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KNA_Studio.Plugins.SubDir;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -94,7 +95,7 @@ namespace KNA_Studio
         public Builder()
         {
             InitializeComponent();
-            MessageBox.Show("KNA LDB Studio 1.1 PTB: This our first public test build! Report bugs on our GitHub page.", "What's New", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
             RefreshListBox();
             this.FormClosing += MainForm_FormClosing;
       //      btnCopyExisting.Click += btnCopyExisting_Click;
@@ -102,7 +103,7 @@ namespace KNA_Studio
 
         private void Builder_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("KNA LDB Studio 1.1 PTB: This our first public test build! Report bugs on our GitHub page.", "What's New", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -547,6 +548,17 @@ namespace KNA_Studio
                 // Handle any errors
                 MessageBox.Show($"An error occurred while updating the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void folderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CreateNewValue createNewValue = new CreateNewValue();
+            createNewValue.ShowDialog();
         }
     }
 }

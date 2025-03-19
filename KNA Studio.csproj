@@ -70,8 +70,17 @@
     <Compile Include="Other\OldCreationPage.Designer.cs">
       <DependentUpon>OldCreationPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuilderPages\CreateNewValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuilderPages\CreateNewValue.Designer.cs">
+      <DependentUpon>CreateNewValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BuilderPages\CreateNewValue.resx">
+      <DependentUpon>CreateNewValue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Builder.resx">
       <DependentUpon>Builder.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,7 +119,9 @@
     <Content Include="Other\NewFile1.txt" />
     <Content Include="Other\NewFile2.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Plugins\SubDir\" />
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Basic\random.ts" />
   </ItemGroup>
