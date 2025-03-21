@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNA Studio", "KNA Studio.csproj", "{62541D07-A65F-4A26-AB72-1F2FA116E3A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHelper", "ErrorHelper\ErrorHelper\ErrorHelper.csproj", "{1202ABCF-2625-43C3-B700-9969DAEC47D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWriter", "ProjectWriter\ProjectWriter.csproj", "{0B56CE1B-144B-4E20-B1F0-0384351513D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFunctions", "CommonFunctions\CommonFunctions.csproj", "{F929DBB2-2A40-40FD-BD2A-A654B6A9367C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themes", "Themes\Themes.csproj", "{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,31 @@ Global
 		{62541D07-A65F-4A26-AB72-1F2FA116E3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62541D07-A65F-4A26-AB72-1F2FA116E3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62541D07-A65F-4A26-AB72-1F2FA116E3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1202ABCF-2625-43C3-B700-9969DAEC47D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1202ABCF-2625-43C3-B700-9969DAEC47D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1202ABCF-2625-43C3-B700-9969DAEC47D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1202ABCF-2625-43C3-B700-9969DAEC47D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B56CE1B-144B-4E20-B1F0-0384351513D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B56CE1B-144B-4E20-B1F0-0384351513D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B56CE1B-144B-4E20-B1F0-0384351513D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B56CE1B-144B-4E20-B1F0-0384351513D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F929DBB2-2A40-40FD-BD2A-A654B6A9367C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F929DBB2-2A40-40FD-BD2A-A654B6A9367C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F929DBB2-2A40-40FD-BD2A-A654B6A9367C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F929DBB2-2A40-40FD-BD2A-A654B6A9367C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1202ABCF-2625-43C3-B700-9969DAEC47D6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0B56CE1B-144B-4E20-B1F0-0384351513D6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F929DBB2-2A40-40FD-BD2A-A654B6A9367C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D30CC34-A535-4A24-A1C3-7FC38FBE48CC}

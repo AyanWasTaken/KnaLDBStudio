@@ -18,7 +18,22 @@ namespace KNA_Studio
 
         public static string SelectedDB = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, @"Data\bldr\SelectedDB.log")).Trim();
         private Stack<string> deletedFilesStack = new Stack<string>();
+        public static bool AutoSaveBool = false;
+        private void AutoSave()
+        {
+            if (AutoSaveBool == false)
+            {
 
+            }
+            else if (AutoSaveBool == true)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Your version of KNA LDB Studio is likely corrupt. Autosaving will be off since the void is not able to run.", "Autosave Void", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void EmptyTempFolder()
         {
             try
@@ -103,7 +118,8 @@ namespace KNA_Studio
 
         private void Builder_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("KNA LDB Studio 1.1 PTB: This our first public test build! Report bugs on our GitHub page.", "What's New", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("KNA LDB Studio V0.1 Alpha PTB: This our first public test build! Report bugs on our GitHub page.", "What's New", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Text = "Builder - Project " + File.ReadAllText(Path.Combine(Environment.CurrentDirectory, @"Data\proj\mostrecentproject.txt"));
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -278,13 +294,13 @@ namespace KNA_Studio
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Saved project file", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Project files are not supported at the moment, check back in later versions!", "Unsupported", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Wrote all changes", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Project files are not supported at the moment, check back in later versions! Dont worry, all your local database changes are done on live.", "Unsupported", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -559,6 +575,11 @@ namespace KNA_Studio
         {
             CreateNewValue createNewValue = new CreateNewValue();
             createNewValue.ShowDialog();
+        }
+
+        private void autoSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
