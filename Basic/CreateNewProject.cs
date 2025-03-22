@@ -66,5 +66,10 @@ namespace KNA_Studio
                 }
             }
         }
+
+        private void CreateNewProject_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

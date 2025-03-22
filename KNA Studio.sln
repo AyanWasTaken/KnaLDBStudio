@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFunctions", "CommonFu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themes", "Themes\Themes.csproj", "{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubDirectories", "..\SubDirectories\SubDirectories.csproj", "{6E67C9EC-577F-44D2-86ED-908F1CC942A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E67C9EC-577F-44D2-86ED-908F1CC942A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E67C9EC-577F-44D2-86ED-908F1CC942A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E67C9EC-577F-44D2-86ED-908F1CC942A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E67C9EC-577F-44D2-86ED-908F1CC942A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{0B56CE1B-144B-4E20-B1F0-0384351513D6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F929DBB2-2A40-40FD-BD2A-A654B6A9367C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{809DB521-D45C-4D58-AB5C-AFD6BE472F0A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6E67C9EC-577F-44D2-86ED-908F1CC942A0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D30CC34-A535-4A24-A1C3-7FC38FBE48CC}

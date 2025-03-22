@@ -173,6 +173,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateNewProject";
             this.Text = "CreateNewProject";
+            this.Load += new System.EventHandler(this.CreateNewProject_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

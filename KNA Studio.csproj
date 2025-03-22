@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ErrorHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ErrorHelper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -47,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic\ExistingTypeSelecter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\ExistingTypeSelecter.Designer.cs">
+      <DependentUpon>ExistingTypeSelecter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Builder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Basic\ExistingTypeSelecter.resx">
+      <DependentUpon>ExistingTypeSelecter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuilderPages\CreateNewValue.resx">
       <DependentUpon>CreateNewValue.cs</DependentUpon>
     </EmbeddedResource>
