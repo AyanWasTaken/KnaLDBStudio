@@ -13,10 +13,12 @@ namespace KNA_Studio.Plugins.SubDir
 {
     public partial class CreateNewValue: Form
     {
+        private Builder _mainForm;
         public static string SelectedDB = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, @"Data\bldr\SelectedDB.log")).Trim();
-        public CreateNewValue()
+        public CreateNewValue(Builder mainForm)
         {
             InitializeComponent();
+            _mainForm = mainForm;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -59,7 +61,8 @@ namespace KNA_Studio.Plugins.SubDir
 
                 Builder builder = new Builder();
                 // Optionally, refresh the ListBox to show the new file
-              builder.RefreshListBox();
+                // builder.RefreshListBox();
+                _mainForm.RefreshListBox();
             }
             catch (Exception ex)
             {

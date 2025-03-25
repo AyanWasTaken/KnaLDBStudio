@@ -142,6 +142,8 @@
             this.ClientSize = new System.Drawing.Size(784, 212);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "ExistingTypeSelecter";
             this.Text = "Open Existing";
             this.panel4.ResumeLayout(false);

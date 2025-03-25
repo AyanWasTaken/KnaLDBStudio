@@ -57,6 +57,12 @@
     <Compile Include="Basic\ExistingTypeSelecter.Designer.cs">
       <DependentUpon>ExistingTypeSelecter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Basic\Agreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\Agreement.Designer.cs">
+      <DependentUpon>Agreement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Builder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Basic\ExistingTypeSelecter.resx">
       <DependentUpon>ExistingTypeSelecter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\Agreement.resx">
+      <DependentUpon>Agreement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuilderPages\CreateNewValue.resx">
       <DependentUpon>CreateNewValue.cs</DependentUpon>

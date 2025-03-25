@@ -18,7 +18,7 @@ namespace ProjectWriter
             }
             else if (Directory.Exists(Environment.CurrentDirectory) == true)
             {
-                Directory.CreateDirectory(Environment.CurrentDirectory + @"\repos\");
+                //code here
             }
             else
             {

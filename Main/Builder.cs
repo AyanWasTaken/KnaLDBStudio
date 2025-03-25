@@ -68,6 +68,9 @@ namespace KNA_Studio
         {
             // Empty the temp folder when the form is closing
             EmptyTempFolder();
+            // Terminate the UI thread and force the process to exit
+            Application.ExitThread(); // Closes all message pumps and windows
+            Environment.Exit(0); // Forcefully terminates the entire process
         }
 
         public void RefreshListBox()
@@ -89,7 +92,7 @@ namespace KNA_Studio
 
                 // get all files with the specified extensions
                 DirectoryInfo dinfo = new DirectoryInfo(directoryPath);
-                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log", ".obj", ".mtl", ".psd", ".ae" };
+                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log", ".obj", ".mtl", ".psd", ".ae", ".zip", ".rar" };
                 FileInfo[] smFiles = dinfo.GetFiles("*.*")
                                           .Where(f => allowedExtensions.Contains(f.Extension.ToLower()))
                                           .ToArray();
@@ -439,7 +442,7 @@ namespace KNA_Studio
             try
             {
                 // Define the allowed file extensions
-                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log", ".obj", ".mtl", ".psd", ".ae" };
+                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log", ".obj", ".mtl", ".psd", ".ae", ".zip", ".rar" };
 
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
@@ -573,13 +576,81 @@ namespace KNA_Studio
 
         private void button3_Click(object sender, EventArgs e)
         {
-            CreateNewValue createNewValue = new CreateNewValue();
+            CreateNewValue createNewValue = new CreateNewValue(this);
             createNewValue.ShowDialog();
         }
 
         private void autoSaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void customToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Define the allowed file extensions
+                string[] allowedExtensions = { ".txt", ".kna", ".mp4", ".mp3", ".png", ".jpg", ".jpeg", ".exe", ".scr", ".wav", ".m4a", ".log", ".obj", ".mtl", ".psd", ".ae" };
+
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "All Files (*.*)|*.*";
+                    openFileDialog.Title = "Select files to upload";
+                    openFileDialog.Multiselect = true; // Allow multiple file selection
+
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+
+                        foreach (string selectedFilePath in openFileDialog.FileNames)
+                        {
+                            string fileName = Path.GetFileName(selectedFilePath);
+                            string fileExtension = Path.GetExtension(selectedFilePath).ToLower();
+                            string destinationPath = Path.Combine(Environment.CurrentDirectory, SelectedDB, fileName);
+
+
+                            if (File.Exists(destinationPath))
+                            {
+
+                                DialogResult overwriteResult = MessageBox.Show($"The file '{fileName}' already exists. Do you want to overwrite it?", "Overwrite Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                if (overwriteResult == DialogResult.No)
+                                {
+                                    continue;
+                                }
+                            }
+
+                            File.Copy(selectedFilePath, destinationPath, overwrite: true);
+
+                            if (!allowedExtensions.Contains(fileExtension))
+                            {
+
+                                MessageBox.Show($"The file '{fileName}' has an unsupported extension ({fileExtension}). It has been uploaded but will not be visible in the studio explorer.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+
+
+                        RefreshListBox();
+
+                        MessageBox.Show("All files uploaded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"An error occurred while uploading the files: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshListBox();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ErrorHelper.Show errorHelper = new ErrorHelper.Show();
+            errorHelper.Information("This action is currently unsupported, check back in later versions!", "Unsupported");
         }
     }
 }

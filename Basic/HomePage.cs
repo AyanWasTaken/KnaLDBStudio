@@ -1,7 +1,9 @@
-﻿using System;
+﻿using KNA_Studio.Basic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,7 +47,8 @@ namespace KNA_Studio
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Agreement agreement = new Agreement();
+            //agreement.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,6 +63,34 @@ namespace KNA_Studio
             CreateNewProject createNewProject = new CreateNewProject();
             createNewProject.ShowDialog();
             this.Hide();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            ExistingTypeSelecter existingTypeSelecter = new ExistingTypeSelecter();
+            existingTypeSelecter.ShowDialog();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // URL to open
+                string url = "https://github.com/AyanWasTaken/KnaLDBStudio";
+
+                // Use the operating system's shell to open the URL
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to open browser: {ex.Message}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

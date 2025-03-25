@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -129,6 +130,7 @@
             this.label6.Size = new System.Drawing.Size(52, 52);
             this.label6.TabIndex = 10;
             this.label6.Text = ">";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -175,6 +177,7 @@
             this.label9.Size = new System.Drawing.Size(41, 52);
             this.label9.TabIndex = 10;
             this.label9.Text = "*";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -210,6 +213,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Settings";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
@@ -236,6 +240,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HomePage";
             this.Text = "KNA LDB Studio Community 2025";

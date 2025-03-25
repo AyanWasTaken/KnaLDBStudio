@@ -17,7 +17,17 @@ namespace KNA_Studio
         public CreateNewProject()
         {
             InitializeComponent();
+            this.FormClosing += MainForm_FormClosing;
         }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Empty the temp folder when the form is closing
+            //EmptyTempFolder();
+            // Terminate the UI thread and force the process to exit
+            Application.ExitThread(); // Closes all message pumps and windows
+            Environment.Exit(0); // Forcefully terminates the entire process
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -54,7 +64,9 @@ namespace KNA_Studio
             {
                 try
                 {
-                    File.WriteAllText(Path.Combine(Environment.CurrentDirectory, @"Data\bldr\SelectedDB.log"), textBox2.Text);
+                    Directory.CreateDirectory(textBox2.Text + @"\" + textBox1.Text);
+
+                    File.WriteAllText(Path.Combine(Environment.CurrentDirectory, @"Data\bldr\SelectedDB.log"), textBox2.Text + @"\" + textBox1.Text);
                     File.WriteAllText(Path.Combine(Environment.CurrentDirectory, @"Data\proj\mostrecentproject.txt"), textBox1.Text);
                     Builder builder = new Builder();
                     builder.Show();

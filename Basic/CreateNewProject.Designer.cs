@@ -170,9 +170,11 @@
             this.Controls.Add(this.label8);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "CreateNewProject";
-            this.Text = "CreateNewProject";
+            this.Text = "Create New Project";
             this.Load += new System.EventHandler(this.CreateNewProject_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

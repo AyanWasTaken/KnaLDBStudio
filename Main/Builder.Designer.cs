@@ -175,6 +175,7 @@
             this.customToolStripMenuItem.Name = "customToolStripMenuItem";
             this.customToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.customToolStripMenuItem.Text = "Custom";
+            this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator2
             // 
@@ -199,6 +200,7 @@
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // autoSaveToolStripMenuItem
             // 
@@ -374,11 +376,9 @@
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(512, 699);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(476, 25);
             this.textBox2.TabIndex = 30;
             // 
@@ -423,7 +423,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(402, 78);
+            this.button4.Location = new System.Drawing.Point(402, 82);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(58, 35);
             this.button4.TabIndex = 38;
@@ -443,6 +443,7 @@
             this.button5.TabIndex = 39;
             this.button5.Text = "DB Management";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -474,7 +475,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(402, 119);
+            this.button1.Location = new System.Drawing.Point(402, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 47);
             this.button1.TabIndex = 42;
@@ -488,7 +489,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(402, 172);
+            this.button7.Location = new System.Drawing.Point(402, 176);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(58, 52);
             this.button7.TabIndex = 43;
@@ -521,6 +522,8 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Builder";
             this.Text = "Builder";
             this.Load += new System.EventHandler(this.Builder_Load);
