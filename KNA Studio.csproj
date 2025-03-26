@@ -51,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic\DB Management\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\DB Management\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic\DB Management\RenamePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic\DB Management\RenamePage.Designer.cs">
+      <DependentUpon>RenamePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Basic\ExistingTypeSelecter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +74,12 @@
     </Compile>
     <Compile Include="Basic\Agreement.Designer.cs">
       <DependentUpon>Agreement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Key System\Collector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Key System\Collector.Designer.cs">
+      <DependentUpon>Collector.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Builder.cs">
       <SubType>Form</SubType>
@@ -95,6 +113,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Basic\DB Management\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic\DB Management\RenamePage.resx">
+      <DependentUpon>RenamePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Basic\ExistingTypeSelecter.resx">
       <DependentUpon>ExistingTypeSelecter.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuilderPages\CreateNewValue.resx">
       <DependentUpon>CreateNewValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Key System\Collector.resx">
+      <DependentUpon>Collector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Builder.resx">
       <DependentUpon>Builder.cs</DependentUpon>

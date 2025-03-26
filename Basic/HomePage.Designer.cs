@@ -225,7 +225,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 11;
-            this.label2.Text = "V.0.1 PTB Alpha";
+            this.label2.Text = "V.0.2 PTB Alpha";
             // 
             // HomePage
             // 
